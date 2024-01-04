@@ -1,0 +1,69 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block bodyContent %}
+
+<div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class="banner-heading">
+                <h1 class="banner-title">Services</h1>
+                <ol class="breadcrumb">
+                   <li><a href="{% url 'home' %}"> Home </a></li>
+                   <li><a href="{% url 'services' %}">Services</a></li>
+                </ol>
+             </div>
+          </div>
+          <!-- Col end-->
+       </div>
+       <!-- Row end-->
+    </div>
+    <!-- Container end-->
+ </div>
+ <!-- Banner area end-->
+ 
+
+ <section class="main-container no-padding" id="main-container">
+
+    <div class="ts-services " id="ts-services">
+       <div class="container">
+
+          <div class="row text-center">
+             <div class="col-md-12">
+                <h2 class="section-title">
+                    <span style="color:green">CADA</span>
+                     Nos services
+                </h2>
+             </div>
+          </div>
+          <!-- Title row end-->
+
+        
+         <div class="row row-wrap-delete">
+            {% for service in services_list %}
+               <div class="col-lg-4 col-md-12">
+                  <div class="ts-service-box" style="box-shadow:2px 0 2px 2px #eee; text-align:center">
+                     <div class="ts-service-image-wrapper">
+                        <img class="img-fluid" 
+                           src="{{ service.cover_image.url }}"
+                           style="height: 250px; width: inherit;"
+                           alt="">
+                     </div>
+                     <div class="ts-service-content">
+                        <h3 class="service-title">{{ service.name }}</h3>
+                        <p>{{ service.brefDescription}}</p>
+                        <p><a class="link-more" href="{% url 'servicesDetail' service.slug %}">Voir plus <i class="icon icon-right-arrow2"></i></a></p>
+                     </div>
+                  </div>
+                  <!-- Service1 end-->
+               </div>
+            {% endfor %}
+         </div>
+         <div class="gap-30"></div>     
+    </div>
+ </section>
+
+{% endblock bodyContent %}

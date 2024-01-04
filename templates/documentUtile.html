@@ -1,0 +1,95 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+
+{% block headLinks %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Style for the list */
+        ul {
+          list-style: none;
+        }
+    
+        /* Style for the download button */
+        .download-btn {
+          background-color: #007bff;
+          color: #fff;
+          padding: 5px 10px;
+          text-decoration: none;
+          border-radius: 5px;
+        }
+    
+        .download-btn:hover {
+          background-color: #0056b3;
+        }
+      </style>
+{% endblock headLinks %}
+
+{% block bodyContent %}
+
+<div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class="banner-heading">
+                <h1 class="banner-title">Documents Utiles</h1>
+                <ol class="breadcrumb">
+                   <li><a href="{% url 'home' %}">Home</a></li>
+                   <li><a href="{% url 'doc' %}">documents</a></li>
+                </ol>
+             </div>
+          </div>
+          <!-- Col end-->
+       </div>
+       <!-- Row end-->
+    </div>
+    <!-- Container end-->
+ </div>
+ <!-- Banner area end-->
+ <section class="main-container" id="main-container">
+
+    <div class="container">
+
+       <div class="row">
+        
+        <div class="col">
+            <div>
+                <div class="widget no-padding no-border">
+                   
+                      </ul>
+
+                      <ul class="service-menu">
+                        <li>
+                            <span style="font-weight:bold;">Carte identitaire du CADA</span>
+                            <a class="row" href="path/to/file1.pdf" class="download-btn" download><i class="fas fa-download"></i> Download</a>
+                        </li>
+
+                        <li>
+                            <span style="font-weight:bold;">Document 1</span>
+                            <a class="row" href="path/to/file1.pdf" class="download-btn" download><i class="fas fa-download"></i> Download</a>
+                        </li>
+
+                        <li>
+                            <span style="font-weight:bold;">Document 2</span>
+                            <a class="row" href="path/to/file1.pdf" class="download-btn" download><i class="fas fa-download"></i> Download</a>
+                        </li>
+                    </ul>
+
+                </div>
+            
+            </div>
+        </div>
+    
+    </div>
+ </section>
+
+
+
+
+    
+
+    <!-- Full width -->
+
+{% endblock bodyContent %}

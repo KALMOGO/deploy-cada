@@ -1,0 +1,131 @@
+{% load static %}
+{% load i18n %}
+
+
+<div class="site-top-2">
+    <header class="header nav-down" id="header-2">
+       <div class="container">
+          <div class="row">
+             <div class="logo-area clearfix">
+                <div class="logo col-lg-3 col-md-12">
+                   <a href="">
+                      <img src="{% static 'images/logo.jpg' %}" alt="logo">
+                   </a>
+                </div>
+                <!-- logo end-->
+                
+                <div class="col-lg-9 col-md-12 pull-right">
+                   <ul class="top-info unstyled">
+                      <li><span class="info-icon"><i class="icon icon-phone3"></i></span>
+                         <div class="info-wrapper">
+                            <p class="info-title">24/7 Telephone</p>
+                            <p class="info-subtitle">  (+226) 70 04 96 67</p>
+                         </div>
+                      </li>
+
+                        <li><span class="info-icon"><i class="icon icon-envelope"></i></span>
+                            <div class="info-wrapper">
+                            <p class="info-title">Ecrivez nous</p>
+                            <p class="info-subtitle"> 
+                            <a href="mailto:cadabobo2021@gmail.com" style='color:black'>
+                                cadabobo2021@gmail.com 
+                            </a></p>
+                            </div>
+                        </li>
+                   </ul>
+                </div>
+                <!-- Col End-->
+             </div>
+             <!-- Logo Area End-->
+          </div>
+       </div>
+       <!-- Container end-->
+       <div class="site-nav-inner site-navigation navigation navdown">
+          <div class="container">
+             <nav class="navbar navbar-expand-lg ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                   aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="icon icon-menu"></i></span></button>
+                <!-- End of Navbar toggler-->
+                <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+                   <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href=" {% url 'home' %} ">Home</i></a>
+                      </li>
+
+                      <!-- li end-->
+                      <li class="nav-item">
+                        <a class="nav-link" href=" {% url 'team' %} ">
+                            Equipe
+                        </a>
+                      </li>
+
+                      <!-- li end-->
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'projects'%}" >Projets</i></a>
+                      </li>
+
+                      <!-- li end-->
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services </a>
+                      </li>
+
+
+                      <!-- li end-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'actualities' %}">
+                                Actualités
+                            </a>
+                        </li>
+                     
+                          <!-- li end-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'partenaires' %}">
+                                Partenaires
+                            </a>
+                        </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'photo' %}">
+                            Photothèque
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown">
+                            Ressources<i class="fa fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{% url 'links' %}">Liens Utiles</a></li>
+                            <li><a href="{% url 'doc' %}">Documents Utiles</a></li>
+                        </ul>
+                     </li>
+                   </ul>
+                   <!--Nav ul end-->
+                </div>
+                <!-- Top bar btn -->
+             </nav>
+            
+            <!-- Collapse end-->
+            {% if alertInfo|length > 0  %}
+                <div style="background-color:#fdee" class="row">
+                    <div class="col-lg-1 col-md-12" 
+                        style='background-color:red; text-align:center; font-weight:bold; color:#fff'>
+                        Infos 
+                    </div>
+                    <div class="col">
+                        <marquee behavior="scroll" direction="left" scrollamount="3">
+                            {% for alert  in  alertInfo %}
+                                <span style="margin-right: 20px"> {{ alert.message }} ; </span>
+                            {% endfor %}
+                        </marquee>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Site nav inner end-->
+    </header>
+    <!-- Header end-->
+ </div>

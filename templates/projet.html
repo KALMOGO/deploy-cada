@@ -1,0 +1,59 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block bodyContent %}
+
+<div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class="banner-heading">
+                <h1 class="banner-title">Projets</h1>
+                <ol class="breadcrumb">
+                   <li> <a href="{%  url 'home' %}">Home</a> </li>
+                   <li><a href="{% url 'projects' %}">Projets</a></li>
+                </ol>
+             </div>
+          </div>
+          <!-- Col end-->
+       </div>
+    </div>
+    <!-- Container end-->
+ </div>
+ <!-- Banner area end-->
+ <section class="projects" id="projects">
+    <div class="container">
+       <div class="row text-center">
+          <div class="col-md-12">
+             <h2 class="section-title"><span style="color:green;">CADA</span>
+                Nos projets
+            </h2>
+          </div>
+       </div>
+       <div class="row ">
+         {% for project in project_list %}
+            <div class="col-lg-4 ">
+               <div class="latest-post post-large project-post-large">
+                  <div class="latest-post-media project-post-media">
+                     <a class="latest-post-img" href="project-single.html">
+                        <img class="img-fluid" 
+                           src="{{ project.cover_image.url }}"
+                           style="height: 250px; width: 400px;"
+                           alt="img">
+                     </a>
+                     <div class="post-body project-body project-post-body">
+                        <a class="post-cat" href="project-single.html">{{project.intitule}}</a>
+                        <a class="btn btn-primary" href="{% url 'projectDetail' project.slug %}">Voir plus</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         {% endfor %}
+       </div>
+       <div class="gap-30"></div>
+    </div>
+ </section>
+
+{% endblock bodyContent %}

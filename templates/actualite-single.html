@@ -1,0 +1,147 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block bodyContent %}
+
+    
+<div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="banner-heading">
+                <h1 class="banner-title">Détail Actualité: Colloque sur la décentralisation</h1>
+                <ol class="breadcrumb">
+                <li> <a href="{% url 'home' %}"> Home </a></li>
+                <li><a href="{% url 'actualities' %}"> Actualités</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- Col end-->
+    </div>
+    <!-- Row end-->
+    </div>
+    <!-- Container end-->
+</div>
+<!-- Banner area end-->
+
+    <section class="main-container" id="main-container">
+         <div class="container">
+            <div class="row">
+				<div class="col-lg-8 ">
+
+					<div class="post-content">
+						<div class="post-media post-image ">
+							<img class="img-fluid" src="images/news/news1.jpg" class="img-responsive" alt="">
+						</div>
+
+						<div class="post-body">
+                    <div class="entry-header">
+                        <h2 class="entry-title"><a href="#">
+                            Colloque international sur la construction de l'État unitaire décentralisé au Burkina Faso
+                        </a></h2>
+                    </div>
+                    <!-- header end-->
+
+                        <div class="entry-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+                            <p>Kucididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+
+                            <p>Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. </p>
+
+                            
+
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos quira tione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ue magnam aliquam quaerat voluptatem.</p>
+                        </div>
+
+                        <div class="tags-area clearfix">
+                            <div class="post-tags pull-left">
+                                mot clés:
+                                <a href="https://www.google.com/search?q=Colloque" target="_blank">Colloque</a>
+                                <a href="https://www.google.com/search?q=État+unitaire+décentralisé" target="_blank">État unitaire décentralisé</a>
+                                <a href="https://www.google.com/search?q=Burkina+Faso" target="_blank">Burkina Faso</a>
+                            </div>
+                            <div class="share-items pull-right">
+                                <ul class="post-social-icons unstyled">
+                                    <li class="social-icons-head">Voir sur: </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/profile.php?id=100076183524530" target="_blank"><i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"> </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+							
+						</div><!-- post-body end -->
+					</div><!-- post content end -->
+				
+				</div><!-- Content Col end -->
+                
+                    {% comment %} Actualité cardre mini {% endcomment %}
+                <div class="col-lg-4">
+                    <div class="sidebar sidebar-left">
+                        
+                        <div class="widget recent-posts">
+                            <h3 class="widget-title">Autres Actualités</h3>
+        
+                            <ul class="unstyled clearfix">
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <img alt="img" src="{% static 'images/news/news1.jpg' %}">
+                                </div>
+                                <div class="media-body media-middle"><span class="post-date"><i class="icon icon-calendar-full"></i>
+                                    <a href="{% url 'actualitiesDetail' 'slug' %}"> 19 Jannvier 2023</a></span>
+                                    <h4 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                                    Actualitié 3
+                                    </a>
+                                    </h4>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <!-- 1st post end-->
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <img alt="img" src="{% static 'images/services/photo2.jpg' %}">
+                                </div>
+                                <div class="media-body media-middle"><span class="post-date"><i class="icon icon-calendar-full"></i>
+                                    <a href="{% url 'actualitiesDetail' 'slug' %}"> 24 Janvier 2023</a></span>
+                                    <h4 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                                    Actualitié 4
+                                    </a>
+                                    </h4>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+        
+                            <!-- 2nd post end-->
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <img alt="img" src="{% static 'images/services/photo1.jpg' %}">
+                                </div>
+                                <div class="media-body media-middle">
+                                    <span class="post-date"><i class="icon icon-calendar-full"></i>
+                                    <a href="{% url 'actualitiesDetail' 'slug' %}"> 27 Janvier 2023</a></span>
+                                    <h4 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                                    Actualitié 5
+                                    </a>
+                                    </h4>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            </ul>
+                        </div>
+                        <!-- Recent post end-->
+                    </div>
+                    <!-- Sidebar end-->
+                </div>
+                <!-- Sidebar Col end-->
+                </div>
+            <!-- Main row end-->
+        </div>
+        <!-- Container end-->
+    </section>
+{% endblock bodyContent %}

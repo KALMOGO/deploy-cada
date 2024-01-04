@@ -1,0 +1,54 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block bodyContent %}
+
+<div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="banner-heading">
+                    <h1 class="banner-title">Détail Projet: {{ projet.intitule}} </h1>
+                    <ol class="breadcrumb">
+                    <li> <a href="{% url 'home' %}"> Home </a></li>
+                    <li><a href="{% url 'projects' %}"> Projets</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <section class="main-container" id="main-container">
+        <div class="container">
+           <div class="row" style="display: flex; justify-content: center;">
+            <div class="col-lg-8 ">
+                <div class="post-content">
+                        <div class="post-media post-image ">
+                            <img class="img-fluid" src="{{ projet.cover_image.url }}" class="img-responsive" alt="">
+                        </div>
+                        <div class="post-body">
+                        <div class="entry-header">
+                        <h2 class="entry-title">
+                            <a href="#">{{ projet.intitule }}</a>
+                        </h2>
+                </div>
+                    <div class="entry-content">
+                        <p>{{ projet.description | safe}}</p>
+                    </div>
+                    </div><!-- post-body end -->
+                </div><!-- post content end -->
+            
+                </div><!-- Content Col end -->
+            
+            </div>
+        <!-- Main row end-->
+    </div>
+    <!-- Container end-->
+</section>
+
+{% endblock bodyContent %}
+
+    

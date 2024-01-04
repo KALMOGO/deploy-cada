@@ -1,0 +1,98 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block bodyContent %}
+
+    <div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="banner-heading">
+                    <h1 class="banner-title">Equipe</h1>
+                    <ol class="breadcrumb">
+                    <li > <a href="{% url 'home' %}">Home</a> </li>
+                    <li><a href="{% url 'team' %}">Equipe /</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Col end-->
+        </div>
+        <!-- Row end-->
+        </div>
+        <!-- Container end-->
+    </div>
+    <!-- Banner area end-->
+
+    <section class="ts-team solid-bg">
+        <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h2 class="section-title"><span></span>Notre équipe</h2>
+            </div>
+        </div>
+        <!-- Title row end-->
+        <div class="row">
+            {% for membre in personnel_list %}
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ts-team-wrapper">
+                            <div class="team-img-wrapper">
+                                <img class="img-fluid" alt="" 
+                                    src="{{membre.image.url}}"
+                                    style="height: 200px; width: inherite;">
+                            </div>
+                            <div class="ts-team-content">
+                                <h3 class="team-name">{{ membre.nom }}</h3>
+                                <p class="team-designation">{{ membre.poste }}</p>
+                            </div>
+                            <div class="team-social-icons">
+                                <div class="team-social-icons">
+                                    <a target="_blank" href="{{membre.facebook}}">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a target="_blank" href="{{membre.twitter}}">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a target="_blank" href="{{membre.email}}">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                    <a target="_blank" href="{{membre.linkedin}}">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            {% comment %} <div class="col-lg-3 col-md-6">
+
+                <div class="ts-team-wrapper">
+
+                    <div class="team-img-wrapper">
+                        <img class="img-fluid" alt="" src="{% static 'images/team/dryoni.jpeg' %}">
+                    </div>
+
+                    <div class="ts-team-content">
+                    <h3 class="team-name">Dr Diassibo YONLI</h3>
+                    <p class="team-designation">Sécrétaire Général</p>
+                    </div>
+                    <!-- Team content end-->
+                    <div class="team-social-icons"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a><a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a><a target="_blank" href="#"><i class="fa fa-linkedin"></i></a></div>
+                    <!-- social-icons-->
+                </div>
+                <!-- Team wrapper 1 end-->
+            </div> {% endcomment %}
+            <!-- Col end-->
+        </div>
+        <!-- Content row end-->
+        <div class="gap-60"></div>
+        </div>
+        <!-- Container end-->
+    </section>
+
+
+{% endblock bodyContent %}

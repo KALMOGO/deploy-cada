@@ -1,0 +1,167 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block bodyContent %}
+
+<div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class="banner-heading">
+                <h1 class="banner-title">Actualités</h1>
+                <ol class="breadcrumb">
+                   <li> <a href="{% url 'home' %}">Home</a></li>
+                   <li><a href="{% url 'actualities' %}">Actualités</a></li>
+                </ol>
+             </div>
+          </div>
+          <!-- Col end-->
+       </div>
+       <!-- Row end-->
+    </div>
+    <!-- Container end-->
+ </div>
+ <!-- Banner area end-->
+ 
+ <section class="main-container" id="main-container">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-4">
+             <div class="sidebar sidebar-left">
+
+                <div class="widget recent-posts">
+                   <h3 class="widget-title">Autres Actualités</h3>
+
+                   <ul class="unstyled clearfix">
+                      <li class="media">
+                         <div class="media-left media-middle">
+                            <img alt="img" src="{% static 'images/news/news1.jpg' %}">
+                         </div>
+                         <div class="media-body media-middle"><span class="post-date"><i class="icon icon-calendar-full"></i>
+                           <a href="{% url 'actualitiesDetail' 'slug' %}"> 19 Jannvier 2023</a></span>
+                            <h4 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                              Actualitié 3
+                           </a>
+                            </h4>
+                         </div>
+                         <div class="clearfix"></div>
+                      </li>
+                      <!-- 1st post end-->
+                      <li class="media">
+                         <div class="media-left media-middle">
+                            <img alt="img" src="{% static 'images/services/photo2.jpg' %}">
+                         </div>
+                         <div class="media-body media-middle"><span class="post-date"><i class="icon icon-calendar-full"></i>
+                           <a href="{% url 'actualitiesDetail' 'slug' %}"> 24 Janvier 2023</a></span>
+                            <h4 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                              Actualitié 4
+                           </a>
+                            </h4>
+                         </div>
+                         <div class="clearfix"></div>
+                      </li>
+
+                      <!-- 2nd post end-->
+                      <li class="media">
+                         <div class="media-left media-middle">
+                            <img alt="img" src="{% static 'images/services/photo1.jpg' %}">
+                         </div>
+                         <div class="media-body media-middle">
+                           <span class="post-date"><i class="icon icon-calendar-full"></i>
+                           <a href="{% url 'actualitiesDetail' 'slug' %}"> 27 Janvier 2023</a></span>
+                            <h4 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                              Actualitié 5
+                            </a>
+                            </h4>
+                         </div>
+                         <div class="clearfix"></div>
+                      </li>
+                   </ul>
+                </div>
+                <!-- Recent post end-->
+             </div>
+             <!-- Sidebar end-->
+          </div>
+
+          <!-- Sidebar Col end-->
+          <div class="col-lg-8">
+             <!-- 3rd post end-->
+             <div class="post news-post">
+                <div class="post-media post-image">
+                   <img class="img-fluid" src="{% static 'images/news/news1.jpg' %}" alt="">
+                </div>
+                <div class="post-body clearfix">
+                   <div class="post-content">
+                      <div class="entry-header">
+                         <div class="post-meta"><span class="post-cat"><i class="icon icon-folder"></i>
+                           <a href="#">
+                           Facebook
+                        </a></span>
+                         </div>
+                         <h2 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                           colloque international sur la construction de l'État unitaire décentralisé au Burkina Faso
+                        </a></h2>
+                     </div>
+                     
+                      <!-- header end-->
+                      <div class="entry-content">
+                         <p>
+                              Description
+                         </p>
+                      </div>
+                      <div class="post-footer "><a class="btn btn-primary" href="{% url 'actualitiesDetail' 'slug' %}">
+                        Voir plus
+                     </a></div>
+                   </div>
+                   <!-- Post content right-->
+                </div>
+                <!-- post-body end-->
+             </div>
+             <!-- 4th post end-->
+
+             <div class="post news-post">
+               <div class="post-media post-image">
+                  <img class="img-fluid" src="{% static 'images/services/photo4.jpg' %}" alt="" style="height=50px" >
+               </div>
+               <div class="post-body clearfix">
+                  <div class="post-content">
+                     <div class="entry-header">
+                        <div class="post-meta"><span class="post-cat"><i class="icon icon-folder"></i>
+                          <a href="#">
+                          Facebook
+                       </a></span>
+                        </div>
+                        <h2 class="entry-title"><a href="{% url 'actualitiesDetail' 'slug' %}">
+                          Actualité 2
+                        </a></h2>
+                     </div>
+                    
+                     <!-- header end-->
+                     <div class="entry-content">
+                        <p>
+                             Description
+                        </p>
+                     </div>
+                     <div class="post-footer "><a class="btn btn-primary" href="{% url 'actualitiesDetail' 'slug' %}">
+                        Voir plus
+                     </a></div>
+                  </div>
+                  <!-- Post content right-->
+               </div>
+               <!-- post-body end-->
+            </div>
+             <!-- 4th post end-->
+          </div>
+          <!-- Content Col end-->
+       </div>
+       <!-- Main row end-->
+    </div>
+    <!-- Container end-->
+ </section>
+
+{% endblock bodyContent %}
+
+    
+

@@ -1,0 +1,52 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block bodyContent %}
+
+<div class="banner-area" id="banner-area" style="background-image:url({% static 'images/banner/banner_service.png' %});">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class="banner-heading">
+                <h1 class="banner-title">Photothèque</h1>
+                <ol class="breadcrumb">
+                   <li> <a href="{% url 'home' %}">Home</a> </li>
+                   <li><a href="{% url 'photo' %}">gallery</a></li>
+                </ol>
+             </div>
+          </div>
+          <!-- Col end-->
+       </div>
+       <!-- Row end-->
+    </div>
+    <!-- Container end-->
+ </div>
+ <!-- Banner area end-->
+ 
+ <section id="main-container" class="main-container">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+            <h2 class="section-title"><span style='color:green'>CADA</span>Gallerie</h2>
+        </div>
+    </div>
+
+      <div class="row">
+         {% for photo in photos %}
+            <div class="col-lg-3 col-md-6">
+               <div class="gallery-img">
+                  <a class="gallery-popup" href="{{ photo.image.url }}">
+                     <img class="img-fluid" src=" {{ photo.image.url }}" alt="">
+                     <span class="gallery-icon"><i class="fa fa-search"></i></span>
+                  </a>
+               </div>
+            </div>
+         {% endfor %}
+      </div>
+      <div class="gap-30"></div>
+   </div>
+</section>
+
+{% endblock bodyContent %}

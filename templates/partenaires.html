@@ -1,0 +1,52 @@
+{% extends '__frames/main.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block headLinks %}
+    <style>
+        .gap-30 {
+            clear: both;
+            height: 5px !important;
+        }
+        .partenaire-box-pd{
+            padding-right: 5px !important;
+            padding-left: 5px !important;
+        }
+
+    </style>
+{% endblock headLinks %}
+{% block bodyContent %}
+
+{% comment %} Password: <span style='color:green'>CADA</span> {% endcomment %}
+<section id="main-container" class="main-container">
+      <div class="container" style='margin-bottom: 100px;'>
+         <div class="row text-center">
+               <div class="col-md-12">
+               <h2 class="section-title"><span style='color:green'>CADA</span>Partenaires</h2>
+         </div>
+      </div>
+
+      <div class="row">
+         {% for partenaire in partenaires_list %}
+            <div class="col-lg-3 col-md-6" style='display: flex; flex-wrap: wrap;'>
+               <div class="gallery-img">
+                  <a  href="{{partenaire.site}}">
+                     <div>
+                        <img class="img-fluid"
+                           src=" {{ partenaire.logo.url }}"
+                           alt=""> 
+                        <span class="gallery-icon"> <i class="fa fa-search"></i> </span>
+                        {% comment %} {{ partenaire.intitule }} {% endcomment %}
+                     </div>
+                  </a>
+               </div>
+            </div>
+         {% endfor %}
+      </div>
+      <div class="gap-30"></div> 
+      </div>
+    </div>
+</section>
+
+{% endblock bodyContent %}

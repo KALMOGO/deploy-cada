@@ -1,0 +1,12 @@
+Django==4.1.4
+django-bootstrap-v5==1.0.11
+django-ckeditor==6.6.1
+django-cors-headers==3.13.0
+django-filter==22.1
+django-heroku==0.3.1
+django-js-asset==2.1.0
+django-tinymce==3.5.0
+django-utils-six==2.0
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.2.2
+docplex==2.25.236
